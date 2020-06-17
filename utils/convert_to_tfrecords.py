@@ -32,7 +32,7 @@ def convert_folder_tf(data_dir, output_file, display_images, image_size):
     index = 0
     dir_list = []
     dir_count = 0
-    with tf.python_io.TFRecordWriter(output_file) as record_writer:
+    with tf.compat.v1.python_io.TFRecordWriter(output_file) as record_writer:
         for root, dirs, filenames in os.walk(data_dir):
             for dir in dirs:
                 if dir not in dir_list:
